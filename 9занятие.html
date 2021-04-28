@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="cards">  
+       <!-- <div class="card"> 
+        <div class="pic">
+            <img src="img/Слой 1.jpg" alt=""> 
+            <img src="img/Слой 2.png" alt="">
+            <img src="img/Слой 4.png" alt="">
+        </div> 
+        <div class="title">
+            <div> Тайная жизнь</div>
+            <div> домашних животных 2</div>
+             </div>
+<div class="price">
+    <div> 14,00 руб</div>
+    <div> 17,00 руб</div>
+</div>
+<div class="stars"> 
+    <span class="material-icons">star </span> 
+    <span class="material-icons">star </span>
+    <span class="material-icons">star </span>
+    <span class="material-icons">star_half </span>
+    <span class="material-icons">star_border</span>
+ </div>
+<div class="buy"> 
+    <div><img src="img/Слой 5(купить).jpg" alt=""> </div>  </div>
+
+       </div>-->
+
+   </div>
+
+   <script> 
+//одна карточка 
+   card={
+    cardTitle1: "Тайная жизнь",
+    cardTitle2:"домашних животных 2",
+    cost: 17,
+    currency: "руб.",
+    file:"Слой 1.jpg",
+    type:"Слой 4.png",
+    salesFile:"Слой 2.png",
+    sales: false, 
+    rating: 4,
+    button: "Слой 5(купить).jpg"
+   }
+   //полная стоимость
+   let fullCost=`${card.cost},00 ${card.currency}`;
+   //стоимость акции
+   let cost1=card.cost*.9; // минус 10% 
+
+   let salesCost=`${Math.floor(cost1)},00 ${card.currency}`;//отбросили остаток
+   //alert(salesCost)
+
+   //расчет рейтинга 
+   let myStars="";
+   for(i=1; i<=card.rating; i++){
+    myStars+='<span class="material-icons">star </span>';
+   }
+   myStars+='<span class="material-icons">star_border</span>';
+   //alert(myStars)
+
+   let doSales="";
+   if(card.sales) doSales=`<div> ${salesCost}</div> `;
+       
+   let s=` <div class="card"> 
+        <div class="pic">
+            <img src="img/${card.file}" alt=""> 
+            <img src="img/${card.salesFile}" alt="">
+            <img src="img/${card.type}" alt="">
+        </div> 
+        <div class="title">
+            <div> ${card.cardTitle1}</div> 
+            <div> ${card.cardTitle2}</div>
+             </div>
+<div class="price">
+    ${doSales} 
+    <div> ${fullCost}</div>
+</div>
+<div class="stars"> 
+   ${myStars}
+ </div>
+<div class="buy"> 
+    <div><img src="img/${card.button}" alt=""> </div>  </div>
+
+       </div>
+   `;
+   
+   cards.innerHTML=s;
+if(card.sales) document.img[1].style.visibility='visible';
+</script>
+</body>
+</html>
