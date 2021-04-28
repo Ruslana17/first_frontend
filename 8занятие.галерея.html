@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="D:FrontEnd Dev/gal/css/8занятие.галерея.стиль.css">
+    
+</head>
+<body>
+    <section id="picturesHere"> 
+      <!--   <div> <img src="D:FrontEnd Dev/gal/img/red.jpg" alt="">  </div>
+        <p> <a href="#"> Костел </a> </p>
+
+        <div>  <img src="D:FrontEnd Dev/gal/img/troi.jpg" alt="">  </div>
+        <p> <a href="#"> Троицкое </a> </p>
+
+        <div> <img src="D:FrontEnd Dev/gal/img/mir.jpg" alt=""> </div>  
+        <p> <a href="#"> Мир </a> </p>-->
+    </section>
+
+
+    <section id="bigPic">  </section>
+    
+    <script>
+let gallery=[
+{
+    fname: '../img/red.jpg', 
+    pw: '300',
+    title: 'Красный костел',
+    link: 'https://msj.by/katolicheskie-xramy/krasnyj-kostel-v-minske/',
+    description:'В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы'
+},
+
+{
+    fname: '../img/troi.jpg', 
+    pw: '300',
+    title: 'Троицкое предместье',
+    link: 'https://www.belarus.by/ru/travel/belarus-life/trinity-suburb',
+    description:'Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь'
+},
+{
+    fname: '../img/mir.jpg', 
+    pw: '300',
+    title: 'Мирский замок',
+    link: 'https://mirzamak.by/',
+    description:'Построенный в начале XVI в. магнатом Ю. И. Ильиничем замок стал первым частнособственническим замком на землях Белоруси'
+},
+
+]
+let s='';
+for (i=0; i<gallery.length; i++) {
+    s+=`
+    <div> <img src="../img/${gallery[i].fname}" alt="${gallery[i].title}" onclick="showPic('${gallery[i].fname}','${gallery[i].description}')" style="width:${gallery[i].pw}px">  
+        <p> <a href="${gallery[i].link}"> ${gallery[i].title} </a> </p> </div>
+        `;
+}
+picturesHere.innerHTML=s;
+function showPic(p,d) 
+{
+bigPic.innerHTML=`
+<img onclick="bigPic.innerHTML='' " src="../img/${p}" style="width: 1000px">
+<p>${d}</p>`;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+        img{
+            width: 150px;
+            animation: infinite a1 3s;
+        }
+        @keyframes a1{
+            /*0%{} from начало анимации 
+            50%{}
+            100%{} to конец анимации */ 
+            from, 20%, 40%, 50% {
+                opacity: 1;
+                transform: scale(1,1) translateX(0); /* маштаб, перемещение по оси X */
+            }
+            10%, 30%{
+                opacity: 1;
+                transform: scale(1.1,1.1) translateX(0);
+            }
+            75%{
+                opacity: 0;
+                transform: scale(1,1) translateX(700px);
+            }
+             90%{
+            opacity: 1;
+            transform: scale(1,1) translateY(700px);
+        }
+        100%{
+            opacity: 1;
+            transform: scale(1,1) translateY(0);
+        }
+        }
+       
+    </style>
+</head>
+<body>
+   <img src="2/7.jpg" alt="">
+   <img class="animate__animated animate__fadeInTopRight animate__faster" src="2/8.jpg" alt="">; 
+</body>
+</html>
