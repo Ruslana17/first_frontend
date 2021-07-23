@@ -6,7 +6,7 @@ while(n=='' || n==null){
 }
 alert (n + ', I thought of a number from 1 to 100. Try to guess it in the fewest possible attempts. After each attempt I will say "little", "a lot", or "guessed right".');
 
-let number=random(100);
+let number=Math.floor(Math.random()*101);
 let guess=prompt('What number did I think?');
 let numberOfGuesses=0;
 
